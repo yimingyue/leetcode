@@ -1,0 +1,5 @@
+{ "aggregations": [ { "fieldName": "sketch", "name": "UU", "type": "sketch" } ], "dataSource": "ya_fact_feature_segment", "granularity": "day", "queryType": "groupBy", "dimensions": ["last_seen"],
+"filter"
+    { "type": "and", "fields": [ {"type": "selector","dimension": "id","value": "189763" }, {"type": "selector","dimension": "last_seen","value": "2014-01-08T00:00:00.000Z" }, {"type":"selector","dimension":"id_type","value":"fact"}
+
+] }, "intervals": [ "2014-03-22T00:00:00\/2014-03-23T00:00:00" ] }
