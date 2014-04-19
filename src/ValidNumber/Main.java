@@ -12,6 +12,6 @@ public class Main {
         Solution s = new Solution();
 //        System.out.println(s.isNumber("-2e-1.0"));
 //        System.out.println(s.isNumber("e2e1"));
-        System.out.println(s.isNumber("+0e-"));
+        System.out.println(s.isNumber("46e3.2"));
     }
 }
