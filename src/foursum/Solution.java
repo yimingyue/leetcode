@@ -49,7 +49,7 @@ public class Solution {
                 }
             }
         }
-        Stack<Character> s = new Stack<>();
+        Stack<Character> s = new Stack<Character>();
         s.push('c');
         return list;
     }
