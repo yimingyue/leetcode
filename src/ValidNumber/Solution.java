@@ -56,7 +56,9 @@ public class Solution {
                         if (i == s.length())
                             return true;
                         c = s.charAt(i);
-                        if (c - '0' < 0 || c - '0' > 9)
+                        if (c == 'e')
+                            i--;
+                        else if (c - '0' < 0 || c - '0' > 9)
                             return false;
                     }
                 } else if (c == 'e') {
@@ -68,8 +70,8 @@ public class Solution {
                         if (i == s.length())
                             return false;
                         char ch = s.charAt(i);
-                        decimal = false;
-                        if (ch == '-') {
+                        decimal = true;
+                        if (ch == '-' || ch == '+') {
                             if (i == s.length()-1)
                                 return false;
                         }
