@@ -1,16 +1,16 @@
-package CombinationSum;
+package CombinationSum2;
 
 import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
  * User: ymyue
- * Date: 4/7/14
- * Time: 9:55 PM
+ * Date: 4/27/14
+ * Time: 10:39 AM
  * To change this template use File | Settings | File Templates.
  */
 public class Solution {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+    public ArrayList<ArrayList<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         ArrayList<Integer> list = new ArrayList<>();
         int sum = 0;
@@ -35,7 +35,7 @@ public class Solution {
     }
 
     private void getPermute(Map<Integer, Set<ArrayList<Integer>>> rMap,
-                                                                   ArrayList<Integer> list, int target, int sum) {
+                            ArrayList<Integer> list, int target, int sum) {
         if (list.isEmpty()) {
             return;
         }
@@ -52,29 +52,28 @@ public class Solution {
             else {
                 Map<Integer, Set<ArrayList<Integer>>> nMap = new HashMap<>();
                 for (int k : rMap.keySet()) {
-                    int a = v;
-                    ArrayList<Integer> aList = new ArrayList<>();
-                    aList.add(v);
-                    while (k + a <= target) {
+                    if (k + v <= target) {
                         Set<ArrayList<Integer>> set = rMap.get(k);
                         for (ArrayList<Integer> iList : set) {
                             ArrayList<Integer> tList = new ArrayList<>(iList);
-                            tList.addAll(aList);
-                            if (rMap.containsKey(k+a))
-                                rMap.get(k+a).add(tList);
-                            else if (nMap.containsKey(k+a))
-                                nMap.get(k+a).add(tList);
+                            tList.add(v);
+                            if (nMap.containsKey(k+v))
+                                nMap.get(k+v).add(tList);
                             else {
                                 Set<ArrayList<Integer>> nSet = new HashSet<>();
                                 nSet.add(tList);
-                                nMap.put(k+a, nSet);
+                                nMap.put(k+v, nSet);
                             }
                         }
-                        a += v;
-                        aList.add(v);
                     }
                 }
-                rMap.putAll(nMap);
+                for (int k : nMap.keySet()) {
+                    if (rMap.containsKey(k)) {
+                        rMap.get(k).addAll(nMap.get(k));
+                    } else
+                        rMap.put(k, nMap.get(k));
+                }
+
             }
         }
     }

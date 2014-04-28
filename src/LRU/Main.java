@@ -9,13 +9,13 @@ package LRU;
  */
 public class Main {
     public static void main(String [] argv) {
-        LRUCache cache = new LRUCache(1);
-//        cache.set(3, 5);
-//        cache.set(5, 3);
-//        cache.set(10, 7);
-//        cache.set(8, 2);
-//        cache.get(8);
-//        cache.get(8);
+        LRUCache cache = new LRUCache(2);
+        cache.set(2, 1);
+        cache.set(2, 2);
+        cache.get(2);
+        cache.set(1, 1);
+        cache.set(4, 1);
+        cache.get(2);
 //        cache.get(8);
 //        cache.set(2, 1);
 //        cache.get(5);

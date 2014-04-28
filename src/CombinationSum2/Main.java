@@ -1,17 +1,17 @@
-package CombinationSum;
+package CombinationSum2;
 
 /**
  * Created with IntelliJ IDEA.
  * User: ymyue
- * Date: 4/7/14
- * Time: 9:56 PM
+ * Date: 4/27/14
+ * Time: 10:39 AM
  * To change this template use File | Settings | File Templates.
  */
 public class Main {
     public static void main(String [] args) {
-//        int [] a = {48,22,49,24,26,47,33,40,37,39,31,46,36,43,45,34,28,20,29,25,41,32,23};
-        int [] a = {7, 3, 2};
         Solution s = new Solution();
-        s.combinationSum(a, 18);
+        int [] a = {4,4,2,1,4,2,2,1,3};
+        s.combinationSum2(a, 6);
+
     }
 }

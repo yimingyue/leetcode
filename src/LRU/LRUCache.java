@@ -12,70 +12,60 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class LRUCache {
-
-    private Map<Integer, Integer> freq;
-    private Map<Integer, Integer> cache;
-    int capacity;
-
     public LRUCache(int capacity) {
-        this.capacity = capacity;
-        freq = new HashMap<Integer, Integer> ();
-        cache = new HashMap<Integer, Integer>();
+        map = new HashMap<> ();
+        a = new int[capacity];
+        c = capacity;
     }
 
     public int get(int key) {
-        if (cache.containsKey(key)) {
-            freq.put(key, freq.get(key)+1);
-        }
-        return cache.get(key);
-        /*
-        if (cache.containsKey(key)) {
-            Iterator iter = frequency.entrySet.iterator();
-            while (iter.hasNext()) {
-                Map.Entry<Integer, ArrayList<Integer>> entry = iter.next();
-                ArrayList<Integer> list = entry.getValue();
-                Iterator it = list.iterator();
-                while (it.hasNext()) {
-                    int freq = ((Integer)it.next()).intValue();
-                    freq++;
-                    //
-                    if (freq >= capacity) {
-                        it.remove();
-                    } else {
-                        it.set(freq);
-                    }
+        if (map.containsKey(key)) {
+            int i = 0;
+            for (; i < map.size(); i++) {
+                if (a[i] == key) {
+                    break;
                 }
-                if (list.size() == 0) {
-                    iter.remove();
-                    cache.remove(entry.getKey())
-                }
-                if(entry.)
             }
-        }
-        */
+            for (; i < map.size()-1; i++) {
+                a[i] = a[i+1];
+            }
+            a[i] = key;
+            return map.get(key);
+        } else
+            return -1;
     }
 
     public void set(int key, int value) {
-        if (cache.containsKey(key)) {
-            freq.put(key, freq.get(key) + 1);
-            cache.put(key, value);
-        } else {
-            if (cache.size() == capacity) {
-                Iterator it = freq.entrySet().iterator();
-                int leastFreq = Integer.MAX_VALUE;
-                int leastKey = 0;
-                while (it.hasNext()) {
-                    Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>)it.next();
-                    if (entry.getValue() < leastFreq) {
-                        leastFreq = entry.getValue();
-                        leastKey = entry.getKey();
-                    }
+        if (map.containsKey(key)) {
+            int i = 0;
+            for (; i < map.size(); i++) {
+                if (a[i] == key) {
+                    break;
                 }
-                cache.remove(leastKey);
-                freq.remove(leastKey);
             }
-            cache.put(key, value);
-            freq.put(key, 1);
+            for (; i < map.size()-1; i++) {
+                a[i] = a[i+1];
+            }
+            a[i] = key;
+            map.put(key, value);
+        } else {
+            if (map.size() >= c) {
+                map.remove(a[0]);
+                int i = 0;
+                for (; i < map.size(); i++) {
+                    a[i] = a[i+1];
+                }
+
+                map.put(key, value);
+                a[i] = key;
+            } else {
+                a[map.size()] = key;
+                map.put(key, value);
+            }
         }
     }
+
+    HashMap<Integer, Integer> map = null;
+    int [] a;
+    int c;
 }
