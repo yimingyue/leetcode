@@ -19,7 +19,7 @@ public class Main {
         ListNode l4 = new ListNode(13);
         l3.next = l4;
 
-        Solution s = new Solution();
+        Solution2 s = new Solution2();
         ListNode p = s.sortList(l0);
         while (p != null) {
             System.out.println(p.val);
