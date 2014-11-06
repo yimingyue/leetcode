@@ -17,9 +17,15 @@ class Solution:
       return num[start]
 
     if (num[start] > num[mid]) and (num[mid] < num[end]):
+      if num[start] < num[end]:
+        raise Exception("Invalid input, not a rotated sorted array!")
       return self.findMinInArray(num, start + 1, mid)
 
     if (num[start] < num[mid]) and (num[mid] > num[end]):
+      if num[start] < num[end]:
+        raise Exception("Invalid input, not a rotated sorted array!")
       return self.findMinInArray(num, mid+1, end)
 
-    raise Exception("Recursion Error!")
+    if (num[start] > num[mid]) and (num[mid] > num[end]):
+      raise Exception("Invalid input, not a rotated sorted array!")
+    raise Exception("Condition Error!")

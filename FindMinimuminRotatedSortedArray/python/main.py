@@ -1,9 +1,22 @@
 import solution
 
 s = solution.Solution();
+
+# positive cases
 num = [1, 2, 3, 4, 5]
-# num = [5, 1, 2, 3, 4]
-# num = [4, 5, 1, 2, 3]
-# num = [3, 4, 5, 1, 2]
-# num = [2, 3, 4, 5, 1]
 print s.findMin(num)
+
+num = [5, 1, 2, 3, 4]
+print s.findMin(num)
+
+num = [4, 5, 1, 2, 3]
+print s.findMin(num)
+
+num = [3, 4, 5, 1, 2]
+print s.findMin(num)
+
+num = [2, 3, 4, 5, 1]
+print s.findMin(num)
+
+# nagative cases
+num = [

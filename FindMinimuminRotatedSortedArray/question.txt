@@ -36,5 +36,10 @@ and the value of start, mid and end accordingly:
 
 then the next recursion:
 1. if (startValue < midValue < endValue)    return array[0]
-2. if (startValue > midValue < endValue)    recursion on (start, mid]
-3. if (startValue < midValue > endValue)    recursion on (mid, end]
+2. if (startValue > midValue < endValue)
+    2.1 if starValue < endValue invalid Input
+    2.2 else recursion on (start, mid]
+3. if (startValue < midValue > endValue)
+    3.1 if startValue < endValue    invalid Input
+    3.2 else recursion on (mid, end]
+4. if startValue > midValue > endValue  Invalid Input

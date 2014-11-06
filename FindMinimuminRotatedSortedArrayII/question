@@ -1,0 +1,49 @@
+Follow up for "Find Minimum in Rotated Sorted Array":
+What if duplicates are allowed?
+
+Would this affect the run-time complexity? How and why?
+
+Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Find the minimum element.
+
+The array may contain duplicates.
+
+
+
+-----------------------------------------------
+idea: use binary search to recursively find the pivot
+
+if len(num) = 1     return num[0]
+if len(num) = 2     return num[0] if num[0] < num[1] else num[1]
+if len(num) >= 3
+mid = (start+end)/2
+
+if there is equivalence in startValue, midValue and endValue
+1. if startValue == midValue == endValue    recursion on (start, mid)
+2. if startValue == midValue < endValue     return startValue
+3. if startValue == midValue > endValue     recursion on (mid, end]
+4. if startValue < midValue == endValue     return startValue
+5. if startValue > midValue == endValue     recursion on (start, mid]
+otherwise
+6. if (startValue < midValue < endValue)    return startValue
+7. if (startValue > midValue < endValue <= startValue)    recursion on (start, mid]
+8. if (startValue < midValue > endValue <= startValue)    recursion on (mid, end]
+9. if (startValue > midValue < endValue > startValue) invalid Input
+10.if (startValue < midValue > endValue > startValue) invalid Input
+
+combine
+1. if startValue == midValue == endValue    recursion on (start, mid)       {including 1} (3)
+2. if startValue < endValue (9)
+    2.1 if midValue < startValue    Invalid input
+    2.2 if midValue > endValue      Invalid input
+    2.3 return startValue               {including 2, 4, 6}
+3. if startValue <= midValue > endValue (6)
+    3.1 if startValue < endValue        invalid Input
+    3.2 else    recursion on (mid, end]         {including 3, 8}
+4. if startValue > midValue <= endValue (6)
+    4.1 if startValue < endValue invalid Input
+    4.2 else recursion on (start, mid]       {including 5, 7}
+5. if startValue > midValue > endValue  invalid Input   (3)
