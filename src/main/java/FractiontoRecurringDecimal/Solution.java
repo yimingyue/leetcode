@@ -20,16 +20,10 @@ public class Solution {
         // keypoint - convert int to long to avoid integer overflow issues
         long n = (long)numerator;
         long d = (long)denominator;
-        if (n < 0 && d > 0) {
+        if ((n > 0) ^ (d > 0))
             sb.append('-');
-            n = 0 - n;
-        } else if (n > 0 && d < 0) {
-            sb.append('-');
-            d = 0 -d;
-        } else if (n < 0 && d < 0) {
-            n = 0 - n;
-            d = 0 - d;
-        }
+        n = Math.abs(n);
+        d = Math.abs(d);
         if (n < d)
             sb.append(0);
         else {
