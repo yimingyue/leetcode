@@ -17,48 +17,41 @@ public class Solution {
             return "0";
 
         StringBuilder sb = new StringBuilder();
-        // keypoint - convert int to long to avoid integer overflow issues
+        // keypoint - convert it to long to avoid integer overflow issues
         long n = (long)numerator;
         long d = (long)denominator;
         if ((n > 0) ^ (d > 0))
             sb.append('-');
         n = Math.abs(n);
         d = Math.abs(d);
-        if (n < d)
-            sb.append(0);
-        else {
-            long m = n / d;
-            StringBuilder sb2 = new StringBuilder();
-            while (m != 0) {
-                sb2.append(m % 10);
-                m = m / 10;
-            }
-            sb.append(sb2.reverse());
-            n = n % d;
-            if (n == 0)
-                return sb.toString();
-        }
+
+        sb.append(n/d);
+        n = n % d;
+        if (n == 0)
+            return sb.toString();
         sb.append('.');
-        Map<Long, Integer> map = new HashMap<>();
-        map.put(n, 0);
-        int offset = 0;
-        StringBuilder sb3 = new StringBuilder();
+        Map<Long, Integer> map = new HashMap<> ();
+        int offset = sb.length();
+        map.put(n, offset);
         while (n != 0) {
             n = n * 10;
-            sb3.append(n / d);
+            sb.append(n / d);
             n = n % d;
             if (map.containsKey(n)) {
                 offset = map.get(n);
                 // keypoint - find the beginning of the loop part
-                sb.append(sb3.substring(0, offset));
-                sb.append('(');
-                sb.append(sb3.substring(offset));
+                sb.insert(offset, '(');
                 sb.append(')');
                 return sb.toString();
             } else
                 map.put(n, ++offset);
         }
-        sb.append(sb3);
         return sb.toString();
     }
 }
+
+/*
+The key points of the problem;
+ 1) convert numerator and denominator to long to avoid overflow issues
+ 2) have a has map to capture repeat of the remainder and the offset
+*/
