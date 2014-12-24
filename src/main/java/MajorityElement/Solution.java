@@ -26,3 +26,8 @@ public class Solution {
         return a;
     }
 }
+
+/*
+Keypoints:
+ 1) the majority element appears more than [n/2] times. Hence, if omit every pair of different element, the left ones must be the majority elements.
+*/
