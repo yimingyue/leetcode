@@ -1,6 +1,6 @@
 import solution
 
-s = solution.Solution();
+s = solution.threesum.Solution2();
 
 num = [2, 1, 2, 2, 2]
 print s.findMin(num)

@@ -1,6 +1,6 @@
 import solution
 
-s = solution.Solution();
+s = solution.threesum.Solution2();
 
 # positive cases
 num = [1, 2, 3, 4, 5]

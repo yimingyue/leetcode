@@ -1,4 +1,4 @@
-class Solution:
+class threesum.Solution2:
   # @param num, a list of integer
   # @return an integer
   def findMin(self, num):
