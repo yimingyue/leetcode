@@ -1,4 +1,4 @@
-package AppAnnie.ShortestPath;
+package AppAnnie;
 
 /**
  * Created with IntelliJ IDEA.

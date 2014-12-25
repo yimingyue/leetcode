@@ -1,4 +1,4 @@
-package AppAnnie.ShortestPath;
+package AppAnnie.ShortestPath.ShortestPath;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -8,12 +8,6 @@
     <groupId>com.yueyiming.coding</groupId>
     <artifactId>parent</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
-    <modules>
-    	<module>leetcode</module>
-	    <module>google</module>
-        <module>facebook</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
