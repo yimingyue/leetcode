@@ -6,7 +6,7 @@
     <name>Coding Practice</name>
 
     <groupId>com.yueyiming.coding</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>leetcode</artifactId>
     <version>1.0</version>
 
     <properties>
