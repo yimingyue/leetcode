@@ -1,4 +1,4 @@
-package test.java.leetcode.EvaluateReversePolishNotation;
+package leetcode.EvaluateReversePolishNotation;
 
 import org.junit.Test;
 

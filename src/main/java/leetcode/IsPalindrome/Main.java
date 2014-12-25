@@ -1,4 +1,4 @@
-package main.java.leetcode.IsPalindrome;
+package leetcode.IsPalindrome;
 
 /**
  * Created with IntelliJ IDEA.

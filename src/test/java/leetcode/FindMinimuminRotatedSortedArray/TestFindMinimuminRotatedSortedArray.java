@@ -1,4 +1,4 @@
-package test.java.leetcode.FindMinimuminRotatedSortedArray;
+package leetcode.FindMinimuminRotatedSortedArray;
 
 import org.junit.Test;
 

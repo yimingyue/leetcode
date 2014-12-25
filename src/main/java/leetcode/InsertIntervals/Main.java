@@ -1,4 +1,4 @@
-package main.java.leetcode.InsertIntervals;
+package leetcode.InsertIntervals;
 
 import java.util.ArrayList;
 

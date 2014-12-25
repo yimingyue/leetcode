@@ -1,4 +1,4 @@
-package main.java.leetcode.Bits;
+package leetcode.Bits;
 
 /**
  * Created with IntelliJ IDEA.

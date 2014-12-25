@@ -1,4 +1,4 @@
-package main.java.leetcode.FarFromAvg;
+package leetcode.FarFromAvg;
 
 /**
  * Created with IntelliJ IDEA.

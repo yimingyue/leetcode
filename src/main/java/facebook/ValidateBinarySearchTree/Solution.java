@@ -1,4 +1,4 @@
-package main.java.facebook.ValidateBinarySearchTree;
+package facebook.ValidateBinarySearchTree;
 
 import java.util.Stack;
 

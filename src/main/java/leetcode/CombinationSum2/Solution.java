@@ -1,4 +1,4 @@
-package main.java.leetcode.CombinationSum2;
+package leetcode.CombinationSum2;
 
 import java.util.*;
 

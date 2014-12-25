@@ -1,4 +1,4 @@
-package main.java.leetcode.IpAddress;
+package leetcode.IpAddress;
 
 import java.util.ArrayList;
 

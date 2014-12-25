@@ -1,4 +1,4 @@
-package main.java.leetcode.kmp;
+package leetcode.kmp;
 
 /**
  * Created with IntelliJ IDEA.

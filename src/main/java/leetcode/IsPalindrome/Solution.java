@@ -1,4 +1,4 @@
-package main.java.leetcode.IsPalindrome;
+package leetcode.IsPalindrome;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package main.java.leetcode.foursum;
+package leetcode.foursum;
 
 import java.util.ArrayList;
 import java.util.Stack;

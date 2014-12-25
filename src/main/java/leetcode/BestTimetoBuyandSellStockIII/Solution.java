@@ -1,4 +1,4 @@
-package main.java.leetcode.BestTimetoBuyandSellStockIII;
+package leetcode.BestTimetoBuyandSellStockIII;
 
 /**
  * Created with IntelliJ IDEA.

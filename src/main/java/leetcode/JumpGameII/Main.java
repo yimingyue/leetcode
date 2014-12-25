@@ -1,4 +1,4 @@
-package main.java.leetcode.JumpGameII;
+package leetcode.JumpGameII;
 
 /**
  * Created with IntelliJ IDEA.

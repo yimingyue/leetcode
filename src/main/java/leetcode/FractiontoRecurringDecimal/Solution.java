@@ -1,4 +1,4 @@
-package main.java.leetcode.FractiontoRecurringDecimal;
+package leetcode.FractiontoRecurringDecimal;
 
 import java.util.HashMap;
 import java.util.Map;

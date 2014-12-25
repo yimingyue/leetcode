@@ -1,4 +1,4 @@
-package test.java.leetcode.dto;
+package leetcode.dto;
 
 import org.junit.Test;
 

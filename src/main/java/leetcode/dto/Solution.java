@@ -1,4 +1,4 @@
-package main.java.leetcode.dto;
+package leetcode.dto;
 
 /**
  * Created with IntelliJ IDEA.

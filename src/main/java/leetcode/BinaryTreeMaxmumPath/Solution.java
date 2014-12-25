@@ -1,4 +1,4 @@
-package main.java.leetcode.BinaryTreeMaxmumPath;
+package leetcode.BinaryTreeMaxmumPath;
 
 /**
  * Created with IntelliJ IDEA.

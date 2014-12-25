@@ -1,4 +1,4 @@
-package main.java.leetcode.atoi;
+package leetcode.atoi;
 
 /**
  * Created with IntelliJ IDEA.

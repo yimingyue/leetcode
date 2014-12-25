@@ -1,4 +1,4 @@
-package main.java.leetcode.Candy;
+package leetcode.Candy;
 
 /**
  * Created with IntelliJ IDEA.

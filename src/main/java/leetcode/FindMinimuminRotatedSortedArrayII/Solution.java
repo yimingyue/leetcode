@@ -1,4 +1,4 @@
-package main.java.leetcode.FindMinimuminRotatedSortedArrayII;
+package leetcode.FindMinimuminRotatedSortedArrayII;
 
 /**
  * Created with IntelliJ IDEA.

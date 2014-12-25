@@ -1,4 +1,4 @@
-package main.java.leetcode.JumpGameII;
+package leetcode.JumpGameII;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package main.java.leetcode.InsertIntervals;
+package leetcode.InsertIntervals;
 
 /**
  * Created by ymyue on 4/19/14.

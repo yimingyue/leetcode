@@ -1,4 +1,4 @@
-package main.java.leetcode.EquilibriumIndex;
+package leetcode.EquilibriumIndex;
 
 /**
  * Created with IntelliJ IDEA.

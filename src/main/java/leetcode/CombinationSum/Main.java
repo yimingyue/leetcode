@@ -1,4 +1,4 @@
-package main.java.leetcode.CombinationSum;
+package leetcode.CombinationSum;
 
 /**
  * Created with IntelliJ IDEA.

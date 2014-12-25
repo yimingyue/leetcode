@@ -1,4 +1,4 @@
-package main.java.leetcode.ExcelSheetColumnTitle;
+package leetcode.ExcelSheetColumnTitle;
 
 /**
  * Created with IntelliJ IDEA.

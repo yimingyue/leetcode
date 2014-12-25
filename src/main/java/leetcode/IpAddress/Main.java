@@ -1,4 +1,4 @@
-package main.java.leetcode.IpAddress;
+package leetcode.IpAddress;
 
 /**
  * Created with IntelliJ IDEA.

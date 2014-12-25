@@ -1,4 +1,4 @@
-package main.java.facebook.MaximumConcatenateNumber;
+package facebook.MaximumConcatenateNumber;
 
 import java.util.ArrayList;
 import java.util.Collections;

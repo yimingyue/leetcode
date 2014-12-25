@@ -1,4 +1,4 @@
-package main.java.leetcode.Anagrams;
+package leetcode.Anagrams;
 
 import java.util.ArrayList;
 

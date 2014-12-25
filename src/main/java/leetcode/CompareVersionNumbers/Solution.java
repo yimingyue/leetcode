@@ -1,4 +1,4 @@
-package main.java.leetcode.CompareVersionNumbers;
+package leetcode.CompareVersionNumbers;
 
 /**
  * Created with IntelliJ IDEA.

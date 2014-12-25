@@ -1,4 +1,4 @@
-package main.java.leetcode.FindMissingPositive;
+package leetcode.FindMissingPositive;
 
 /**
  * Created with IntelliJ IDEA.

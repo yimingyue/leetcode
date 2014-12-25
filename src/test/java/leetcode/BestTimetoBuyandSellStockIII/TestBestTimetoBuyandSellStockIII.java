@@ -1,4 +1,4 @@
-package test.java.leetcode.BestTimetoBuyandSellStockIII;
+package leetcode.BestTimetoBuyandSellStockIII;
 
 import org.junit.Test;
 

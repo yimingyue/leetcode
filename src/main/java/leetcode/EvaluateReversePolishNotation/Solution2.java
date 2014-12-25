@@ -1,4 +1,4 @@
-package main.java.leetcode.EvaluateReversePolishNotation;
+package leetcode.EvaluateReversePolishNotation;
 
 import java.util.Stack;
 

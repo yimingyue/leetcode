@@ -1,4 +1,4 @@
-package main.java.leetcode.foursum;
+package leetcode.foursum;
 
 /**
  * Created with IntelliJ IDEA.

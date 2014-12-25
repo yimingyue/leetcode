@@ -1,4 +1,4 @@
-package main.java.leetcode.EvaluateReversePolishNotation;
+package leetcode.EvaluateReversePolishNotation;
 
 /**
  * Created with IntelliJ IDEA.

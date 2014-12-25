@@ -1,4 +1,4 @@
-package main.java.leetcode.CountAndSay;
+package leetcode.CountAndSay;
 
 /**
  * Created with IntelliJ IDEA.

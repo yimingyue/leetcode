@@ -1,4 +1,4 @@
-package main.java.leetcode.JumpGame;
+package leetcode.JumpGame;
 
 /**
  * Created by ymyue on 4/20/14.

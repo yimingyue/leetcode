@@ -1,4 +1,4 @@
-package main.java.leetcode.DivideTwoInteger;
+package leetcode.DivideTwoInteger;
 
 /**
  * Created with IntelliJ IDEA.
