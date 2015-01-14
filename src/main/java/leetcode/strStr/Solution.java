@@ -1,4 +1,4 @@
-package strStr;
+package leetcode.strStr;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package ValidNumber;
+package leetcode.ValidNumber;
 
 /**
  * Created with IntelliJ IDEA.

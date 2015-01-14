@@ -1,4 +1,4 @@
-package strStr;
+package leetcode.strStr;
 
 import org.junit.Test;
 
@@ -18,5 +18,29 @@ public class TeststrStr {
         String haystack = "ababc";
         String needle = "abc";
         assertEquals(2, s.strStr(haystack, needle));
+    }
+
+    @Test
+    public void test2() {
+        Solution2 s = new Solution2();
+        String haystack = "mississippi";
+        String needle = "mississippi";
+        assertEquals(s.strStr(haystack, needle), 0);
+    }
+
+    @Test
+    public void test3() {
+        Solution2 s = new Solution2();
+        String haystack = "ababc";
+        String needle = "abc";
+        assertEquals(2, s.strStr(haystack, needle));
+    }
+
+    @Test
+    public void test4() {
+        Solution2 s = new Solution2();
+        String haystack = "babba";
+        String needle = "bbb";
+        assertEquals(0, s.strStr(haystack, needle));
     }
 }
