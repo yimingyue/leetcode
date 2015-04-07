@@ -1,0 +1,8 @@
+Java type conversion:
+	#1 Character to Integer: 
+		Character ch = '1';
+		return ch.getNumericValue();
+	#2 Integer to String:
+		Integer i = 10;
+		return Integer.toString(i);
+	
