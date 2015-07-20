@@ -1,4 +1,4 @@
-package Searcha2DMatrix;
+package leetcode.Searcha2DMatrix;
 
 import org.junit.Test;
 

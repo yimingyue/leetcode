@@ -1,0 +1,28 @@
+1. My solution
+    Step 1:
+    Simplify the problem: given a array, find the maximal area in the area with continuous '1'.
+    then it just need to count the continous 1 in the area.
+
+    Step 2:
+    for each row in the matrix, calculate the maximal area in the row for each element.
+    then for the matrix
+        0   1
+        0   1
+        0   1
+        1   1
+        1   1
+    we can get
+        0   1
+        0   1
+        0   1
+        1   2
+        1   2
+
+    step 3:
+    now we view the matrix vertically. in each column, for each element, we can calculate the largest area till this element.
+    And this is the largest rectangle in histogram question. then we have:
+        0   1
+        0   2
+        0   3
+        1   4
+        1   5

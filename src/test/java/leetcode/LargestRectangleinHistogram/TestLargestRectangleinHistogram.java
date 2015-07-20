@@ -25,4 +25,18 @@ public class TestLargestRectangleinHistogram {
         int [] a = {2,1,5,6,2,3};
         assertEquals(s.largestRectangleArea(a), 10);
     }
+
+    @Test
+    public void test3() {
+        Solution3 s = new Solution3();
+        int [] a = {2,1,5,6,2,3};
+        assertEquals(s.largestRectangleArea(a), 10);
+    }
+
+    @Test
+    public void test4() {
+        Solution3 s = new Solution3();
+        int [] a = {0};
+        assertEquals(s.largestRectangleArea(a), 0);
+    }
 }
