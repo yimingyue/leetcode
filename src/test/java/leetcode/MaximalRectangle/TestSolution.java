@@ -7,7 +7,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * Created by ymyue on 7/19/15.
  */
-public class TestMaximalRectangle {
+public class TestSolution {
 
     @Test
     public void test1() {
