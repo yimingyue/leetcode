@@ -1,4 +1,4 @@
-package MajorityElement;
+package leetcode.MajorityElement;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,22 +8,22 @@ package MajorityElement;
  * To change this template use File | Settings | File Templates.
  */
 public class Solution {
-    public int majorityElement(int[] num) {
-        assert(num.length > 0);
-        int a = num[0];
-        int count = 1;
-        for (int i = 1; i < num.length; i++) {
-            if (a != num[i]) {
-                if (count == 0) {
-                    a = num[i];
-                    count++;
-                }
-                else
-                    count--;
-            } else
+    public int majorityElement(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return 0;
+        int n = 0;
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                n = nums[i];
                 count++;
+            } else if (nums[i] == n)
+                count++;
+            else {
+                count--;
+            }
         }
-        return a;
+        return n;
     }
 }
 
