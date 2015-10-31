@@ -32,4 +32,25 @@ public class TestBestTimetoBuyandSellStockIII {
         Solution s = new Solution();
         assertEquals(8, s.maxProfit(prices));
     }
+
+    @Test
+    public void Test5() {
+        int[] prices = {3,2,6,5,0,3};
+        Solution s = new Solution();
+        assertEquals(7, s.maxProfit(prices));
+    }
+
+    @Test
+    public void Test6() {
+        int[] prices = {6,1,3,2,4,7};
+        Solution s = new Solution();
+        assertEquals(7, s.maxProfit(prices));
+    }
+
+    @Test
+    public void Test7() {
+        int[] prices = {1,4,2,7};
+        Solution s = new Solution();
+        assertEquals(8, s.maxProfit(prices));
+    }
 }

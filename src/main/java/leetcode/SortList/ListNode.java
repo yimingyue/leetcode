@@ -1,4 +1,4 @@
-package SortList;
+package leetcode.SortList;
 
 /**
  * Created with IntelliJ IDEA.

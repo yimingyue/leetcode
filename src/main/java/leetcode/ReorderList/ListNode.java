@@ -1,4 +1,4 @@
-package ReorderList;
+package leetcode.ReorderList;
 
 /**
  * Created with IntelliJ IDEA.

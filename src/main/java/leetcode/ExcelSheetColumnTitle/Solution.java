@@ -17,7 +17,7 @@ public class Solution {
             int m = n % 26;
             char c = (char)('A' + m);
             sb.append(c);
-            n = n / 26;
+            n /= 26;
         }
         return sb.reverse().toString();
     }
