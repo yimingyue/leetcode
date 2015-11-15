@@ -1,35 +1,18 @@
-package TwoSum;
+import java.util.Map;
+import java.util.HashMap;
 
-import java.util.HashSet;
-import java.util.Set;
-
-/**
- * Created with IntelliJ IDEA.
- * User: ymyue
- * Date: 3/14/14
- * Time: 11:25 AM
- * To change this template use File | Settings | File Templates.
- */
 public class Solution {
-    public int[] twoSum(int[] numbers, int target) {
-        Set<Integer> set = new HashSet<Integer>();
-        for (int i : numbers)
-            set.add(i);
-
-        int val = 0;
-        for (int i : set) {
-            if (set.contains(target-i)) {
-                val = i;
-                break;
+    public int[] twoSum(int[] nums, int target) {
+        int[] arr = new int[2];
+        Map<Integer, Integer> map = new HashMap<> ();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                arr[0] = map.get(target - nums[i]);
+                arr[1] = i + 1;
+                return arr;
             }
+            map.put(nums[i], i+1);
         }
-
-        int [] rVal = new int [2];
-        int k = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == val || numbers[i] == target-val)
-                rVal[k++] = i+1;
-        }
-        return rVal;
+        return arr;
     }
 }
