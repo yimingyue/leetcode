@@ -1,4 +1,4 @@
-package Pow;
+package leetcode.Pow;
 
 import java.util.ArrayList;
 

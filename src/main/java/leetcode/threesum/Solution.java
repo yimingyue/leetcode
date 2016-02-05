@@ -1,86 +1,40 @@
-package threesum;
+package leetcode.Threesum;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ymyue
- * Date: 4/4/14
- * Time: 4:28 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Solution {
-    public int threeSumClosest(int[] num, int target) {
-        mergeSort(num);
-        int distance = Integer.MAX_VALUE;
-        int sum = 0;
-        for (int i = 0; i < num.length-2; i++) {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> rList = new ArrayList<> ();
+        if (nums == null || nums.length == 0)
+            return rList;
+        Arrays.sort(nums);
+        int i = 0;
+        while (i < nums.length) {
             int j = i+1;
-            int k = num.length-1;
+            int k = nums.length-1;
             while (j < k) {
-                int x = num[i] + num[j] + num[k];
-                if (x == target)
-                    return target;
-                int margin = target - x;
-                if (Math.abs(margin) < distance) {
-                    distance = Math.abs(margin);
-                    sum = x;
-                }
-                if (margin > 0)
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == 0) {
+                    List<Integer> list = new ArrayList<> ();
+                    list.add(nums[i]);
+                    list.add(nums[j]);
+                    list.add(nums[k]);
+                    rList.add(list);
                     j++;
-                else
+                    while (nums[j] == nums[j-1] && j < k)
+                        j++;
+                    k--;
+                    while (nums[k] == nums[k+1] && j < k)
+                        k--;
+                } else if (sum < 0) {
+                    j++;
+                } else
                     k--;
             }
-        }
-        return sum;
-    }
-
-    private void mergeSort(int [] num) {
-        mergeSort(num, 0, num.length-1);
-    }
-
-    private void mergeSort(int [] num, int start, int end) {
-        if (start == end)
-            return;
-        else {
-            int mid = (start+end) / 2;
-            mergeSort(num, start, mid);
-            mergeSort(num, mid+1, end);
-            merge(num, start, mid, end);
-        }
-    }
-
-    private void merge(int [] num, int start, int mid, int end) {
-        int [] left = new int [mid-start+2];
-        int [] right = new int [end-mid+1];
-        int i = 0;
-        while (i <= mid-start) {
-            left[i] = num[start+i];
             i++;
-        }
-        left[i] = Integer.MAX_VALUE;
-
-        int j = 0;
-        while (j < end-mid) {
-            right [j] = num[mid+1+j];
-            j++;
-        }
-        right[j] = Integer.MAX_VALUE;
-
-        int k = start;
-        i = 0;
-        j = 0;
-        while (k <= end) {
-            if (left[i] < right[j]) {
-                num[k] = left[i];
+            while (i < nums.length && nums[i] == nums[i-1])
                 i++;
-            } else {
-                num[k] = right[j];
-                j++;
-            }
-            k++;
         }
+        return rList;
     }
 }

@@ -1,4 +1,4 @@
-package leetcode.threesum;
+package leetcode.Threesum;
 
 import java.util.*;
 

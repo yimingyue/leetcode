@@ -1,4 +1,4 @@
-package ReverseWordsinaString;
+package leetcode.ReverseWordsinaString;
 
 /**
  * Created with IntelliJ IDEA.

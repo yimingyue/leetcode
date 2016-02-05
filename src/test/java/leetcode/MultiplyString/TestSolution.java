@@ -10,10 +10,19 @@ import static org.junit.Assert.assertEquals;
 public class TestSolution {
     @Test
     public void test1() {
-        Solution2 solution2 = new Solution2();
+        Solution solution = new Solution();
         String num1 = "123";
         String num2 = "456";
-        String r = solution2.multiply(num1, num2);
+        String r = solution.multiply(num1, num2);
         assertEquals("56088", r);
+    }
+
+    @Test
+    public void test2() {
+        Solution solution = new Solution();
+        String num1 = "0";
+        String num2 = "9999";
+        String r = solution.multiply(num1, num2);
+        assertEquals("0", r);
     }
 }

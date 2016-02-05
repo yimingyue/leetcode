@@ -1,4 +1,4 @@
-package SingleNumberII;
+package leetcode.SingleNumberII;
 
 /**
  * Created with IntelliJ IDEA.

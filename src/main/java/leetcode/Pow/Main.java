@@ -1,4 +1,4 @@
-package Pow;
+package leetcode.Pow;
 
 /**
  * Created by ymyue on 4/20/14.

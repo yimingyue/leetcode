@@ -14,7 +14,7 @@ import java.util.Set;
 public class Main {
     public static void main(String [] args) {
         /*
-        threesum.Solution2 s = new threesum.Solution2();
+        Threesum.Solution2 s = new Threesum.Solution2();
         String start = "nape";
         String end = "mild";
         HashSet<String> set = new HashSet<String>();

@@ -1,4 +1,4 @@
-package ReverseWordsinaString;
+package leetcode.ReverseWordsinaString;
 
 import org.junit.Test;
 
@@ -23,5 +23,11 @@ public class TestReverseWordsinaString {
 
         str = "  the sky is  blue ";
         assertEquals(s.reverseWords(str), "blue is sky the");
+    }
+
+    @Test
+    public void Test0() {
+        Solution2 solution2 = new Solution2();
+        assertEquals("1", solution2.reverseWords(" 1 "));
     }
 }

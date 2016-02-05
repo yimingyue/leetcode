@@ -1,17 +1,10 @@
-package MinimalWindowSubstring;
+package leetcode.MinimalWindowSubstring;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ymyue
- * Date: 4/16/14
- * Time: 10:59 AM
- * To change this template use File | Settings | File Templates.
- */
 public class Solution {
+    /*
     public String minWindow(String S, String T) {
         int m = T.length();
         Map<Character, ArrayList<Integer>> map = new HashMap<Character, ArrayList<Integer>> ();
@@ -72,5 +65,58 @@ public class Solution {
             return S.substring(wleft, wright);
         } else
             return "";
+    }
+    */
+    public String minWindow(String s, String t) {
+        if (s == null || t == null || s.isEmpty() || t.isEmpty())
+            return "";
+        int[] arr = new int[256];
+        Set<Character> set = new HashSet<> ();
+        for (int i = 0; i < t.length(); i++) {
+            char ch = t.charAt(i);
+            arr[(int)ch] = arr[(int)ch] + 1;
+            set.add(ch);
+        }
+
+        int[] cnt = new int[256];
+        int i = 0;
+        char ch = 'a';
+        while (i < s.length()) {
+            ch = s.charAt(i);
+            cnt[(int)ch]++;
+            if (cnt[(int)ch] == arr[(int)ch]) {
+                set.remove(ch);
+                if (set.isEmpty())
+                    break;
+            }
+            i++;
+        }
+        if (i == s.length())
+            return "";
+        cnt[ch] = cnt[ch] - 1;
+        int j = 0;
+        int start = 0;
+        int end = 0;
+        int minLen = s.length()+1;
+        while (i < s.length()) {
+            ch = s.charAt(i);
+            cnt[(int)ch] = cnt[(int)ch] + 1;
+            while (j <= i) {
+                ch = s.charAt(j);
+                if (cnt[(int)ch] == arr[(int)ch]) {
+                    if (i - j + 1 < minLen) {
+                        start = j;
+                        end = i+1;
+                        minLen = i-j+1;
+                    }
+                    break;
+                } else {
+                    cnt[(int)ch] = cnt[(int)ch]-1;
+                }
+                j++;
+            }
+            i++;
+        }
+        return s.substring(start, end);
     }
 }

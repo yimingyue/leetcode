@@ -19,4 +19,24 @@ public class TestAll {
         assertEquals(true, s.isNumber(str));
     }
 
+    @Test
+    public void test1() {
+        Solution s = new Solution();
+        String str = ".0e";
+        assertEquals(false, s.isNumber(str));
+    }
+
+    @Test
+    public void test2() {
+        Solution s = new Solution();
+        String str = "-.";
+        assertEquals(false, s.isNumber(str));
+    }
+
+    @Test
+    public void test3() {
+        Solution s = new Solution();
+        String str = ".1";
+        assertEquals(true, s.isNumber(str));
+    }
 }

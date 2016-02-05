@@ -1,49 +1,74 @@
-package LRUCache;
+package leetcode.LRUCache;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ymyue
- * Date: 11/29/14
- * Time: 5:09 PM
- * To change this template use File | Settings | File Templates.
+ * Created by ymyue on 1/10/16.
  */
 public class LRUCache {
-    Map<Integer, Integer> frequency = new HashMap<>();
-    Map<Integer, Integer> map = new HashMap<> ();
+    class DoublyLinkedListNode {
+        int key;
+        int val;
+        DoublyLinkedListNode pre;
+        DoublyLinkedListNode next;
+        public DoublyLinkedListNode(int key, int val) {
+            this.key = key;
+            this.val = val;
+            pre = null;
+            next = null;
+        }
+    }
+
     int capacity;
+    DoublyLinkedListNode head;
+    DoublyLinkedListNode tail;
+    Map<Integer, DoublyLinkedListNode> map;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
+        head = null;
+        tail = null;
+        map = new HashMap<>();
     }
 
     public int get(int key) {
-        if (map.containsKey(key))
-            return map.get(key);
+        if (map.containsKey(key)) {
+            DoublyLinkedListNode node = map.get(key);
+            if (node != tail) {
+                node.next.pre = node.pre;
+                if (node == head)
+                    head = node.next;
+                else
+                    node.pre.next = node.next;
+                node.next = null;
+                node.pre = tail;
+                tail.next = node;
+                tail = node;
+            }
+            return node.val;
+        }
         return -1;
     }
 
     public void set(int key, int value) {
-        if (map.size() < capacity) {
-            if (!frequency.containsKey(key)) {
-                frequency.put(key, 1);
+        if (map.containsKey(key)) {
+            map.get(key).val = value;
+        } else {
+            if (map.size() == capacity) {
+                map.remove(head.key);
+                head = head.next;
+            }
+            DoublyLinkedListNode node = new DoublyLinkedListNode(key, value);
+            map.put(key, node);
+            if (tail == null) {
+                head = node;
+                tail = node;
             } else {
-                frequency.put(key, frequency.get(key) + 1);
+                tail.next = node;
+                node.pre = tail;
+                tail = node;
             }
-            map.put(key, value);
-        } else{
-            int max = Integer.MAX_VALUE;
-            int maxKey = 0;
-            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                if (entry.getValue() < max)
-                    maxKey = entry.getKey();
-            }
-            map.remove(maxKey);
-            frequency.remove(maxKey);
-            map.put(key, value);
-            frequency.put(key, 1);
         }
     }
 }

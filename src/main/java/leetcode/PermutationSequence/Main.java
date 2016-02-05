@@ -1,4 +1,4 @@
-package PermutationSequence;
+package leetcode.PermutationSequence;
 
 /**
  * Created with IntelliJ IDEA.

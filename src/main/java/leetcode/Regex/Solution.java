@@ -1,4 +1,4 @@
-package Regex;
+package leetcode.Regex;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,50 +9,56 @@ package Regex;
  */
 public class Solution {
     public boolean isMatch(String s, String p) {
-        int m = s.length();
-        int n = p.length();
-        boolean [][] dp = new boolean[m+1][n+1];
         int i = 0;
-        while (i < m+1) {
-            int j = 0;
-            while (j < n+1) {
-                if (i == 0 && j == 0)
-                    dp[i][j] =  true;
-
-                    // s = "", p = "m*n*"
-                else if (i == 0) {
-                    if (j == 1)
-                        dp[i][j] = false;
-                    else if (p.charAt(j-1) == '*')
-                        dp[i][j] = dp[i][j-2];
-                    else
-                        dp[i][j] = false;
-                } else {
-                    if (j == 0)
-                        dp[i][j] = false;
-                    else if (j == 1) {
-                        if (p.charAt(j-1) == '.' || p.charAt(j-1) == s.charAt(i-1))
-                            dp[i][j] = dp[i-1][j-1];
-                        else
-                            dp[i][j] = false;
-                    }
-                    else if (p.charAt(j-1) == '.' || p.charAt(j-1) == s.charAt(i-1)) {
-                        dp[i][j] = dp[i-1][j-1];
-                    }
-                    else if (p.charAt(j-1) == '*') {
-                        dp[i][j] = (dp[i][j-1] | dp[i][j-2]);
-                    }
-                    else {
-                        dp[i][j] = false;
-                    }
+        int j = 0;
+        while (true) {
+            if (i == s.length() && j == p.length())
+                return true;
+            if (j == p.length())
+                return false;
+            if (i == s.length()) {
+                if (j == p.length()-1)
+                    return false;
+                if (p.charAt(j+1) == '*') {
+                    j = j + 2;
+                    continue;
                 }
-                j = j+1;
+                else
+                    return false;
             }
-            for (int k = 0; k <= n; k++)
-                System.out.print(dp[i][k] + " ");
-            System.out.println();
-            i = i+1;
+            if (p.charAt(j) == '.') {
+                if (j == p.length()-1 || p.charAt(j+1) != '*') {
+                    i++;
+                    j++;
+                } else {
+                    if (j+2 == p.length())
+                        return true;
+                    p = p.substring(j+2);
+                    for (int k = i; k <= s.length(); k++) {
+                        if (isMatch(s.substring(k), p))
+                            return true;
+                    }
+                    return false;
+                }
+            } else if (j < p.length()-1 && p.charAt(j+1) == '*') {
+                char ch = p.charAt(j);
+                if (j+2 == p.length()) {
+                    while (i != s.length() && s.charAt(i) == ch)
+                        i++;
+                    return i == s.length();
+                }
+                j += 2;
+                while (i != s.length() && s.charAt(i) == ch) {
+                    if (isMatch(s.substring(i), p.substring(j)))
+                        return true;
+                    i++;
+                }
+            } else {
+                if (p.charAt(j) != s.charAt(i))
+                    return false;
+                i++;
+                j++;
+            }
         }
-        return dp[m][n];
     }
 }

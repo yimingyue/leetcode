@@ -10,7 +10,7 @@ package leetcode.SortList;
 public class Solution {
     public ListNode sortList(ListNode head) {
         // IMPORTANT: Please reset any member data you declared, as
-        // the same threesum.Solution2 instance will be reused for each test case.
+        // the same Threesum.Solution2 instance will be reused for each test case.
         return mergeSort(head);
     }
     private ListNode mergeSort(ListNode head) {

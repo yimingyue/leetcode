@@ -1,4 +1,4 @@
-package MaxPointsonaLine;
+package leetcode.MaxPointsonaLine;
 
 import java.util.*;
 

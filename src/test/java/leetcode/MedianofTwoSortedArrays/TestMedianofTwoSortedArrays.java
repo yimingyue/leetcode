@@ -1,4 +1,4 @@
-package MedianofTwoSortedArrays;
+package leetcode.MedianofTwoSortedArrays;
 
 import org.junit.Test;
 
@@ -34,5 +34,12 @@ public class TestMedianofTwoSortedArrays {
         int[] B = {1, 2};
         Solution s = new Solution();
         assertEquals(1.5, s.findMedianSortedArrays(A, B));
+    }
+    @Test
+    public void test4() {
+        int[] A = {1, 1};
+        int[] B = {1, 2};
+        Solution s = new Solution();
+        assertEquals(1.0, s.findMedianSortedArrays(A, B));
     }
 }

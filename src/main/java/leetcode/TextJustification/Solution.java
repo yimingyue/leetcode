@@ -1,4 +1,4 @@
-package TextJustification;
+package leetcode.TextJustification;
 
 import java.util.ArrayList;
 

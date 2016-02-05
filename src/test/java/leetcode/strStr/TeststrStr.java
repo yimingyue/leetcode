@@ -41,6 +41,6 @@ public class TeststrStr {
         Solution2 s = new Solution2();
         String haystack = "babba";
         String needle = "bbb";
-        assertEquals(0, s.strStr(haystack, needle));
+        assertEquals(-1, s.strStr(haystack, needle));
     }
 }

@@ -9,78 +9,59 @@ package leetcode.ValidNumber;
  */
 public class Solution {
     public boolean isNumber(String s) {
-        boolean decimal = false;
-        boolean exp = false;
         s = s.trim();
         if (s.isEmpty())
             return false;
-
         int i = 0;
-        while (i < s.length()) {
-            char c = s.charAt(i);
-            if (i == 0) {
-                if (c == '-' || c == '+') {
-                    if (i == s.length()-1)
-                        return false;
-                    i++;
-                    char ch = s.charAt(i);
-                    if (ch == '.') {
-                        decimal = true;
-                        i++;
-                        if (i == s.length())
-                            return false;
-                        ch = s.charAt(i);
-                        if (ch - '0' < 0 || ch - '0' > 9)
-                            return false;
-                    }
-                    else if (ch - '0' < 0 || ch - '0' > 9)
-                        return false;
-                } else if (c == '.') {
-                    decimal = true;
-                    i++;
-                    if (i == s.length())
-                        return false;
-                    c = s.charAt(i);
-                    if (c - '0' < 0 || c - '0' > 9)
-                        return false;
-                }
-                else if (c - '0' < 0 || c - '0' > 9)
-                    return false;
-            } else {
-                if (c == '.') {
-                    if (decimal)
-                        return false;
-                    else {
-                        decimal = true;
-                        i++;
-                        if (i == s.length())
-                            return true;
-                        c = s.charAt(i);
-                        if (c == 'e')
-                            i--;
-                        else if (c - '0' < 0 || c - '0' > 9)
-                            return false;
-                    }
-                } else if (c == 'e') {
-                    if (exp)
-                        return false;
-                    else {
-                        exp = true;
-                        i++;
-                        if (i == s.length())
-                            return false;
-                        char ch = s.charAt(i);
-                        decimal = true;
-                        if (ch == '-' || ch == '+') {
-                            if (i == s.length()-1)
-                                return false;
-                        }
-                        else if (ch - '0' < 0 || ch - '0' > 9)
-                            return false;
-                    }
-                } else if (c - '0' < 0 || c - '0' > 9)
-                    return false;
+        char ch = s.charAt(i);
+        if (ch != '+' && ch != '-' && (ch < '0' || ch > '9') && ch != '.')
+            return false;
+        if (ch == '+' || ch == '-') {
+            i++;
+            ch = s.charAt(i);
+        }
+        boolean isNumber = false;
+        while (ch >= '0' && ch <= '9') {
+            i++;
+            if (i == s.length())
+                return true;
+            ch = s.charAt(i);
+            isNumber = true;
+        }
+        if (ch != '.' && ch != 'e')
+            return false;
+        if (ch == '.') {
+            i++;
+            if (i == s.length()) {
+                if (isNumber)
+                    return true;
+                return false;
             }
+            ch = s.charAt(i);
+            if ((ch < '0' || ch > '9') && ch != 'e')
+                return false;
+            while (ch >= '0' && ch <= '9') {
+                i++;
+                if (i == s.length())
+                    return true;
+                ch = s.charAt(i);
+            }
+        }
+        if (ch != 'e')
+            return false;
+        if (i == s.length()-1)
+            return false;
+        i++;
+        ch = s.charAt(i);
+        if (ch != '-' && (ch < '0' || ch > '9'))
+            return false;
+        if (ch == '-' && i == s.length()-1)
+            return false;
+        i++;
+        while (i < s.length()) {
+            ch = s.charAt(i);
+            if (ch < '0' || ch > '9')
+                return false;
             i++;
         }
         return true;

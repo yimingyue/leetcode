@@ -7,48 +7,40 @@ import java.util.Stack;
  */
 public class Solution {
     public int calculate(String s) {
-        Stack<Long> operands = new Stack<> ();
+        Stack<Integer> operands = new Stack<> ();
         Stack<Character> operators = new Stack<> ();
+        int cur = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
-            if (Character.isDigit(ch)) {
-                long operand = 0;
-                while (Character.isDigit(ch)) {
-                    operand = 10 * operand + Character.getNumericValue(ch);
-                    i++;
-                    if (i == s.length()) break;
-                    ch = s.charAt(i);
-                }
-                operands.push(operand);
-            } else if (ch == '+' || ch == '-') {
+            if (ch == '+' || ch == '-' || ch == '(') {
                 operators.push(ch);
-            } else if (ch == '(') {
-                int count = 1;
+            } else if (Character.isDigit(ch)) {
+                int num = ch - '0';
                 int j = i+1;
-                while (j < s.length()) {
-                    if (s.charAt(j) == '(')
-                        count++;
-                    else if (s.charAt(j) == ')') {
-                        count--;
-                        if (count == 0) {
-                            operands.push((long)calculate(s.substring(i+1, j)));
-                            i = j+1;
-                            break;
-                        }
-                    }
+                while (j < s.length() && Character.isDigit(s.charAt(j))) {
+                    num *= 10;
+                    num += s.charAt(j) - '0';
                     j++;
+                }
+                if (operators.isEmpty() || operators.peek() == '(') {
+                    operands.push(cur);
+                    cur = num;
+                } else {
+                    if (operators.pop() == '+') {
+                        cur += num;
+                    } else {
+                        cur -= num;
+                    }
+                }
+                i = j-1;
+            } else if (ch == ')') {
+                operators.pop();
+                if (!operators.isEmpty()){
+                    cur = operands.pop() + (operators.pop() == '+' ? cur : -cur);
                 }
             }
         }
-        long val = operands.pop();
-        while (!operators.isEmpty()) {
-            char ch = operators.pop();
-            long leftOp = operands.pop();
-            if (ch == '+')
-                val = leftOp + val;
-            else if (ch == '-')
-                val = leftOp - val;
-        }
-        return (int)val;
+
+        return cur;
     }
 }

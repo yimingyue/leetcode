@@ -10,7 +10,7 @@ public class Solution {
 
     public int maxPoints(Point[] points) {
         // IMPORTANT: Please reset any member data you declared, as
-        // the same MaxPontOnLine.threesum.Solution2 instance will be reused for each test case.
+        // the same MaxPontOnLine.Threesum.Solution2 instance will be reused for each test case.
 
         // no point at all
         if (points.length == 0)

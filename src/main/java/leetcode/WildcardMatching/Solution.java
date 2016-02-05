@@ -1,4 +1,4 @@
-package WildcardMatching;
+package leetcode.WildcardMatching;
 
 /**
  * Created with IntelliJ IDEA.

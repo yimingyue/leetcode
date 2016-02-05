@@ -7,7 +7,7 @@ import java.util.Stack;
  */
 
 /*
-    Solution from: http://www.programcreek.com/2014/05/leetcode-maximal-rectangle-java/ .
+    Codec from: http://www.programcreek.com/2014/05/leetcode-maximal-rectangle-java/ .
     Pretty much the same as mine, but with better code structure and funciton interface
  */
 public class Solution2 {
