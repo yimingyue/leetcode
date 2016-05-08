@@ -22,4 +22,10 @@ public class TestMinimumWindowSubstring {
     public void test3() {
         assertEquals("ba", new Solution().minWindow("bba", "ab"));
     }
+
+    @Test
+    public void test4() {
+        assertEquals("a", new Solution().minWindow("a", "a"));
+    }
+
 }
