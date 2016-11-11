@@ -1,4 +1,4 @@
-package SudokuSolver;
+package leetcode.SudokuSolver;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package WordBreak2;
+package leetcode.WordBreak2;
 
 import java.util.*;
 

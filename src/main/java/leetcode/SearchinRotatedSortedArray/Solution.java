@@ -1,4 +1,4 @@
-package SearchinRotatedSortedArray;
+package leetcode.SearchinRotatedSortedArray;
 
 /**
  * Created with IntelliJ IDEA.

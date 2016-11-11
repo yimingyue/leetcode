@@ -8,21 +8,24 @@ import static org.junit.Assert.assertEquals;
  * Created by ymyue on 11/20/15.
  */
 public class TestSolution {
+    SolutionKMPImprove solution = new SolutionKMPImprove();
     @Test
     public void test0() {
-        Solution s = new Solution();
-        assertEquals("aaacecaaa", s.shortestPalindrome("aacecaaa"));
+        assertEquals("aaacecaaa", solution.shortestPalindrome("aacecaaa"));
     }
 
     @Test
     public void test1() {
-        Solution s = new Solution();
-        assertEquals("dcbabcd", s.shortestPalindrome("abcd"));
+        assertEquals("dcbabcd", solution.shortestPalindrome("abcd"));
     }
 
     @Test
     public void test2() {
-        Solution s = new Solution();
-        assertEquals("a", s.shortestPalindrome("a"));
+        assertEquals("a", solution.shortestPalindrome("a"));
+    }
+
+    @Test
+    public void test3() {
+        assertEquals("ababbabbbababbbabbaba", solution.shortestPalindrome("ababbbabbaba"));
     }
 }

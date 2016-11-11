@@ -1,4 +1,4 @@
-package LRU;
+package leetcode.LRU;
 
 /**
  * Created with IntelliJ IDEA.

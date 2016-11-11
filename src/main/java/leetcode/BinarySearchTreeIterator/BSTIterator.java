@@ -1,5 +1,7 @@
 package leetcode.BinarySearchTreeIterator;
 
+import ds.TreeNode;
+
 import java.util.Stack;
 
 /**

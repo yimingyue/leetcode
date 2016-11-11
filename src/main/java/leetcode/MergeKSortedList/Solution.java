@@ -1,5 +1,7 @@
 package leetcode.MergeKSortedList;
 
+import leetcode.common.ds.ListNode;
+
 /**
  * Created by ymyue on 5/24/15.
  */

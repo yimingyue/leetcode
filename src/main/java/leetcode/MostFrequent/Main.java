@@ -1,4 +1,4 @@
-package MostFrequent;
+package leetcode.MostFrequent;
 
 /**
  * Created with IntelliJ IDEA.

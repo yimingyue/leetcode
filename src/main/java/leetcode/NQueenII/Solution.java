@@ -1,4 +1,4 @@
-package NQueenII;
+package leetcode.NQueenII;
 
 /**
  * Created by ymyue on 4/20/14.

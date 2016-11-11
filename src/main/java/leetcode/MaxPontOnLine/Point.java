@@ -1,4 +1,4 @@
-package MaxPontOnLine;
+package leetcode.MaxPontOnLine;
 
 /**
  * Created with IntelliJ IDEA.

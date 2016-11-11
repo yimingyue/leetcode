@@ -1,4 +1,4 @@
-package Palindrome2;
+package leetcode.Palindrome2;
 
 import java.util.HashMap;
 import java.util.Iterator;

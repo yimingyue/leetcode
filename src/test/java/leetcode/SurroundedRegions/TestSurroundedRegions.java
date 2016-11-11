@@ -1,4 +1,4 @@
-package SurroundedRegions;
+package leetcode.SurroundedRegions;
 
 import org.junit.Test;
 

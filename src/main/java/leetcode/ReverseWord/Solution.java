@@ -1,4 +1,4 @@
-package ReverseWord;
+package leetcode.ReverseWord;
 
 /**
  * Created with IntelliJ IDEA.

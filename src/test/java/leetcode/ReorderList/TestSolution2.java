@@ -1,5 +1,6 @@
 package leetcode.ReorderList;
 
+import leetcode.common.ds.ListNode;
 import org.junit.Test;
 
 /**

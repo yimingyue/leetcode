@@ -1,4 +1,4 @@
-package LongestValidParenthesis;
+package leetcode.LongestValidParenthesis;
 
 /**
  * Created with IntelliJ IDEA.

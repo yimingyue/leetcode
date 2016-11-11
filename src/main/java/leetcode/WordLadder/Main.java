@@ -1,4 +1,4 @@
-package WordLadder;
+package leetcode.WordLadder;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -14,7 +14,7 @@ import java.util.Set;
 public class Main {
     public static void main(String [] args) {
         /*
-        Threesum.Solution2 s = new Threesum.Solution2();
+        Threesum.ZigzagIterator s = new Threesum.ZigzagIterator();
         String start = "nape";
         String end = "mild";
         HashSet<String> set = new HashSet<String>();

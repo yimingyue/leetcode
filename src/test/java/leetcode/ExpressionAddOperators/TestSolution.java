@@ -11,12 +11,13 @@ import static org.junit.Assert.assertEquals;
  * Created by ymyue on 1/14/16.
  */
 public class TestSolution {
+    SolutionBackTracking solution = new SolutionBackTracking();
     @Test
      public void test0() {
         List<String> list = new ArrayList<>();
         list.add("1*2*3");
         list.add("1+2+3");
-        assertEquals(list, new Solution().addOperators("123", 6));
+        assertEquals(list, solution.addOperators("123", 6));
     }
 
     @Test
@@ -48,5 +49,11 @@ public class TestSolution {
     public void test4() {
         List<String> list = new ArrayList<>();
         assertEquals(list, new Solution().addOperators("3456237490", 9191));
+    }
+
+    @Test
+    public void test5() {
+        List<String> list = new ArrayList<>();
+        assertEquals(list, solution.addOperators("2147483648", -2147483648));
     }
 }

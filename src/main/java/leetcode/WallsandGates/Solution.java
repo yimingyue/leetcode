@@ -1,47 +1,36 @@
 package leetcode.WallsandGates;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 /**
- * Created by ymyue on 1/7/16.
+ * Created by ymyue on 10/20/16.
  */
 public class Solution {
+    private static final int[][] directions = new int[][] {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
+
     public void wallsAndGates(int[][] rooms) {
-        if (rooms == null || rooms.length == 0 || rooms[0].length == 0)
-            return;
-        int m = rooms.length;
-        int n = rooms[0].length;
-        int inf = 2147483647;
-        LinkedList<Integer> queue = new LinkedList<> ();
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        Queue<int[]> queue = new ArrayDeque<>();
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < rooms[i].length; j++) {
                 if (rooms[i][j] == 0)
-                    queue.add(i*n+j);
+                    queue.offer(new int[]{i, j});
             }
         }
-        int dist = 0;
+
+        int level = 0;
         while (!queue.isEmpty()) {
-            int count = queue.size();
-            dist++;
-            for (int k = 0; k < count; k++) {
-                int val = queue.poll();
-                int i = val / n;
-                int j = val % n;
-                if (i > 0 && rooms[i-1][j] == inf) {
-                    rooms[i-1][j] = dist;
-                    queue.add(val - n);
-                }
-                if (i < m-1 && rooms[i+1][j] == inf) {
-                    rooms[i+1][j] = dist;
-                    queue.add(val + n);
-                }
-                if (j > 0 && rooms[i][j-1] == inf) {
-                    rooms[i][j-1] = dist;
-                    queue.add(val - 1);
-                }
-                if (j < n-1 && rooms[i][j+1] == inf) {
-                    rooms[i][j+1] = dist;
-                    queue.add(val + 1);
+            level++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int[] cur = queue.poll();
+                for (int[] direction : directions) {
+                    int x = cur[0] + direction[0];
+                    int y = cur[1] + direction[1];
+                    if (x >= 0 && x < rooms.length && y >= 0 && y < rooms[x].length && rooms[x][y] == Integer.MAX_VALUE) {
+                        rooms[x][y] = level;
+                        queue.offer(new int[]{x, y});
+                    }
                 }
             }
         }

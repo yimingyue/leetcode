@@ -1,4 +1,4 @@
-package MaximumProductSubarray;
+package leetcode.MaximumProductSubarray;
 
 import org.junit.Test;
 
@@ -28,5 +28,10 @@ public class TextMaximumProductSubarray {
         assertEquals(s.maxProduct(array4), 8);
         int [] array5 = {0, 2};
         assertEquals(s.maxProduct(array5), 2);
+    }
+
+    @Test
+    public void test1() {
+        System.out.println(3 % -2);
     }
 }

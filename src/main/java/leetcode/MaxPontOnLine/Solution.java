@@ -1,4 +1,4 @@
-package MaxPontOnLine;/*
+package leetcode.MaxPontOnLine;/*
  * Iterate the point array to make the points distinct.
  * For each point p, iterate the lines. If it's on the line, add it to the line. If it's not on the line, construct a line with each     point on the line.
  * Add the new lines to the line set
@@ -10,7 +10,7 @@ public class Solution {
 
     public int maxPoints(Point[] points) {
         // IMPORTANT: Please reset any member data you declared, as
-        // the same MaxPontOnLine.Threesum.Solution2 instance will be reused for each test case.
+        // the same MaxPontOnLine.Threesum.ZigzagIterator instance will be reused for each test case.
 
         // no point at all
         if (points.length == 0)

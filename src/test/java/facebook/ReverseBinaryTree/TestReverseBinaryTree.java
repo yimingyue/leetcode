@@ -2,8 +2,8 @@ package facebook.ReverseBinaryTree;
 
 import ds.TreeNode;
 import org.junit.Test;
+import utils.BinaryTreeSerialization;
 
-import static utils.BinaryTreeSerialization.serializeTreeNode;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,8 +16,8 @@ public class TestReverseBinaryTree {
     @Test
     public void test() {
         Solution s = new Solution();
-        String str = "{1,2,3,4,5}";
-        TreeNode root = serializeTreeNode(str);
+        String str = "1,2,3,4,5";
+        TreeNode root = new BinaryTreeSerialization().serializeTreeNode(str);
         s.reverseBinaryTree(root);
     }
 }

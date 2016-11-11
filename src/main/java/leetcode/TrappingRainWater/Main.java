@@ -1,4 +1,4 @@
-package TrappingRainWater;
+package leetcode.TrappingRainWater;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package SurroundedRegions;
+package leetcode.SurroundedRegions;
 
 import java.util.Stack;
 

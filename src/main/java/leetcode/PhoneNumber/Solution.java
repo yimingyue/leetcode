@@ -1,4 +1,4 @@
-package PhoneNumber;
+package leetcode.PhoneNumber;
 
 import java.util.*;
 

@@ -7,6 +7,8 @@ import java.util.Map;
 
 /**
  * Created by ymyue on 5/25/15.
+ * Time complexity: O(n)
+ * Space complexity: O(n*i)
  */
 public class Solution2 {
     public List<Integer> findSubstring(String s, String[] words) {

@@ -1,4 +1,4 @@
-package Subset;
+package leetcode.Subset;
 
 /**
  * Created with IntelliJ IDEA.

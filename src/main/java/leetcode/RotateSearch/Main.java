@@ -1,4 +1,4 @@
-package RotateSearch;
+package leetcode.RotateSearch;
 
 /**
  * Created with IntelliJ IDEA.

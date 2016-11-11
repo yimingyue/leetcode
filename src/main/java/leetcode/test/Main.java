@@ -1,4 +1,4 @@
-package test;
+package leetcode.test;
 
 /**
  * Created with IntelliJ IDEA.

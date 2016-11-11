@@ -1,5 +1,7 @@
 package leetcode.ReorderList;
 
+import leetcode.common.ds.ListNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ymyue

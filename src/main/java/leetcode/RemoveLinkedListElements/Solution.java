@@ -1,6 +1,6 @@
 package leetcode.RemoveLinkedListElements;
 
-import leetcode.MergeKSortedList.ListNode;
+import leetcode.common.ds.ListNode;
 
 /**
  * Created by ymyue on 11/1/15.

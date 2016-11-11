@@ -1,4 +1,4 @@
-package PostoderTraversal;
+package leetcode.PostoderTraversal;
 
 /**
  * Created with IntelliJ IDEA.

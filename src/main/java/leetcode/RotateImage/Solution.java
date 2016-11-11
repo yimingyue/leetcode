@@ -1,4 +1,4 @@
-package RotateImage;
+package leetcode.RotateImage;
 
 /**
  * Created with IntelliJ IDEA.

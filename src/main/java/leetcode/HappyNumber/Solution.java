@@ -8,19 +8,21 @@ import java.util.Set;
  */
 public class Solution {
     public boolean isHappy(int n) {
-        Set<Integer> set = new HashSet<>();
-        while (true) {
-            int sum = 0;
-            while (n != 0) {
-                sum += (n % 10) * (n % 10);
-                n /= 10;
-            }
-            n = sum;
-            if (n == 1)
-                return true;
-            if (set.contains(sum))
+        Set<Integer> set = new HashSet<> ();
+        while (n != 1) {
+            if (!set.add(n))
                 return false;
-            set.add(n);
+            n = getNextHappy(n);
         }
+        return true;
+    }
+
+    private int getNextHappy(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n%10)*(n%10);
+            n /= 10;
+        }
+        return sum;
     }
 }

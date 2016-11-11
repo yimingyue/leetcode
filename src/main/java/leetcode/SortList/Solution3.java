@@ -1,5 +1,7 @@
 package leetcode.SortList;
 
+import leetcode.common.ds.ListNode;
+
 /**
  * Created by ymyue on 10/22/15.
  */

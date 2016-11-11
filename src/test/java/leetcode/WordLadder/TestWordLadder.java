@@ -1,4 +1,4 @@
-package WordLadder;
+package leetcode.WordLadder;
 
 import org.junit.Test;
 

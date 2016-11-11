@@ -20,4 +20,9 @@ public class TestSolution {
     public void test1() {
         assertEquals(new LinkedList<Integer>(Arrays.asList(3, 4)), new Solution().findMinHeightTrees(6, new int[][]{{0, 3}, {1, 3}, {2, 3}, {4, 3}, {5, 4}}));
     }
+
+    @Test
+    public void test2() {
+        assertEquals(new LinkedList<Integer>(Arrays.asList(1)), new Solution().findMinHeightTrees(4, new int[][]{{1, 0}, {1, 2}, {1, 3}}));
+    }
 }

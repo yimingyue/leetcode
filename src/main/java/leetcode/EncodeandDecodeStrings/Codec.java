@@ -5,6 +5,13 @@ import java.util.List;
 
 /**
  * Created by ymyue on 12/9/15.
+ * Time complexity:
+ *  - encode: O(n)
+ *  - decode: O(n)
+ * Space complexity:
+ *  - encode: O(n)
+ *  - decode: O(1)
+ *
  */
 public class Codec {
     // Encodes a list of strings to a single string.

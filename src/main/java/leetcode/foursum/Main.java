@@ -1,4 +1,4 @@
-package leetcode.foursum;
+package leetcode.FourSum;
 
 /**
  * Created with IntelliJ IDEA.

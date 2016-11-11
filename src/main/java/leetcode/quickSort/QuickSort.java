@@ -1,4 +1,4 @@
-package quickSort;
+package leetcode.quickSort;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package SubstringConcatenation;
+package leetcode.SubstringConcatenation;
 
 /**
  * Created with IntelliJ IDEA.

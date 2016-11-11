@@ -1,4 +1,4 @@
-package ScrambleString;
+package leetcode.ScrambleString;
 
 import java.util.HashSet;
 import java.util.Set;

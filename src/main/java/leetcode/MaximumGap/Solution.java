@@ -1,50 +1,41 @@
 package leetcode.MaximumGap;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.IntSummaryStatistics;
 
 /**
  * Created by ymyue on 1/18/16.
+ * Pigeon hole theory
  */
 public class Solution {
-    public int maximumGap(int[] nums) {
-        if (nums == null || nums.length < 2)
+    public int maximumGap(int[] nums) {         // 2, 2, 3
+        if (nums.length < 2)
             return 0;
-        int low = nums[0];
-        int high = nums[0];
+        IntSummaryStatistics summary = Arrays.stream(nums).summaryStatistics();
+        int min = summary.getMin();
+        int max = summary.getMax();
+
+        int buckets = nums.length;        // 2
+        HashMap<Integer, Integer> highest = new HashMap<> ();                   // 0 - 2, 2 - 7
+        HashMap<Integer, Integer> lowest = new HashMap<> ();                    // 0 - 2, 2 - 7
         for (int num : nums) {
-            low = Math.min(low, num);
-            high = Math.max(high, num);
+            int bucket = getBucket(num, min, max, buckets);
+            highest.merge(bucket, num, Math::max);
+            lowest.merge(bucket, num, Math::min);
         }
-        int n = nums.length;
-        int[] maxArr = new int[n+1];
-        int[] minArr = new int[n+1];
-        Arrays.fill(maxArr, -1);
-        Arrays.fill(minArr, -1);
-        minArr[n] = high;
-        maxArr[0] = low;
-        int width = (high - low) / n + 1;
-        for (int num : nums) {
-            if (num != high && num != low) {
-                int i = (num - low) / width;
-                maxArr[i] = maxArr[i] == -1 ? num : Math.max(maxArr[i], num);
-                minArr[i] = minArr[i] == -1 ? num : Math.min(minArr[i], num);
+        int last = highest.get(0);                  // 2
+        int maxGap = 0;
+        for (int i =1; i <= buckets; i++) {
+            if (lowest.containsKey(i)) {
+                maxGap = Math.max(maxGap, lowest.get(i) - last);            // 7 - 2
+                last = highest.get(i);
             }
         }
-        int i = 0;
-        int maxDiff = 0;
-        while (i < n) {
-            if (maxArr[i] == -1)
-                i++;
-            else {
-                int j = i+1;
-                while (j < n+1 && minArr[j] == -1)
-                    j++;
-                if (j < n+1) {
-                    maxDiff = Math.max(maxDiff, minArr[j] - maxArr[i]);
-                }
-                i = j;
-            }
-        }
-        return maxDiff;
+        return maxGap;                          // 5
+    }
+
+    private int getBucket(int num, int min, int max, int buckets) {
+        return (num - min) / ((max - min) / buckets + 1);
     }
 }

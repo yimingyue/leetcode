@@ -1,4 +1,4 @@
-package MostFrequent;
+package leetcode.MostFrequent;
 
 import java.util.HashMap;
 import java.util.Map;

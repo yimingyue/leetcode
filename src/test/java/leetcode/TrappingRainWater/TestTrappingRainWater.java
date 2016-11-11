@@ -32,4 +32,11 @@ public class TestTrappingRainWater {
         int[] A = {0,1,0,2,1,1,1,3,2,1,2,1};
         assertEquals(4, solution.trap(A));
     }
+
+    @Test
+    public void test2() {
+        Solution5 solution = new Solution5();
+        int[] A = {0,1,0,2,1,1,1,3,2,1,2,1};
+        assertEquals(5, solution.trap(A));
+    }
 }

@@ -2,6 +2,11 @@ package leetcode.ThreeSumClosest;
 
 import java.util.Arrays;
 
+/**
+ * Time complexity: O(n^2)
+ * Space complexity:O(1)
+ */
+
 public class Solution {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);

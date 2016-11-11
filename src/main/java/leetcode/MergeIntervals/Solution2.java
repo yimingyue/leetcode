@@ -1,4 +1,4 @@
-package MergeIntervals;
+package leetcode.MergeIntervals;
 
 import java.util.*;
 

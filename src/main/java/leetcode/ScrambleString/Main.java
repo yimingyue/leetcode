@@ -1,4 +1,4 @@
-package ScrambleString;
+package leetcode.ScrambleString;
 
 /**
  * Created with IntelliJ IDEA.

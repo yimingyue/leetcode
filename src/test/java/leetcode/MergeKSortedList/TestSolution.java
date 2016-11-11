@@ -1,5 +1,6 @@
 package leetcode.MergeKSortedList;
 
+import leetcode.common.ds.ListNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

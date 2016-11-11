@@ -1,4 +1,4 @@
-package PostoderTraversal;
+package leetcode.PostoderTraversal;
 
 import java.util.ArrayList;
 import java.util.HashMap;

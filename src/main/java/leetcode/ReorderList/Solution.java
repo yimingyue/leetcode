@@ -1,5 +1,7 @@
 package leetcode.ReorderList;
 
+import leetcode.common.ds.ListNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ymyue
@@ -10,7 +12,7 @@ package leetcode.ReorderList;
 public class Solution {
     public void reorderList(ListNode head) {
         // IMPORTANT: Please reset any member data you declared, as
-        // the same Threesum.Solution2 instance will be reused for each test case.
+        // the same Threesum.ZigzagIterator instance will be reused for each test case.
         if (head == null)
             return;
 

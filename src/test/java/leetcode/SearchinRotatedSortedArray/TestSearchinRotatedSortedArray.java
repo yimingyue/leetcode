@@ -1,4 +1,4 @@
-package SearchinRotatedSortedArray;
+package leetcode.SearchinRotatedSortedArray;
 
 import org.junit.Test;
 

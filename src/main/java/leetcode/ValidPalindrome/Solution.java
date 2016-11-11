@@ -1,4 +1,4 @@
-package ValidPalindrome;
+package leetcode.ValidPalindrome;
 
 /**
  * Created with IntelliJ IDEA.

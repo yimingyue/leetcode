@@ -1,4 +1,4 @@
-package NQueen;
+package leetcode.NQueen;
 
 import java.util.ArrayList;
 

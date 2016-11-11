@@ -1,7 +1,7 @@
 1. My solution
     Step 1:
     Simplify the problem: given a array, find the maximal area in the area with continuous '1'.
-    then it just need to count the continous 1 in the area.
+    then it just need to count the continuous 1 in the area.
 
     Step 2:
     for each row in the matrix, calculate the maximal area in the row for each element.

@@ -1,4 +1,4 @@
-package SudokuSolver;
+package leetcode.SudokuSolver;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package MaximumProductSubarray;
+package leetcode.MaximumProductSubarray;
 
 /**
  * Created with IntelliJ IDEA.

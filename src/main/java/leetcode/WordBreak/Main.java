@@ -1,4 +1,4 @@
-package WordBreak;
+package leetcode.WordBreak;
 
 import java.util.HashSet;
 import java.util.Set;

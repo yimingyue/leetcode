@@ -1,4 +1,4 @@
-package PacificAtalantic;
+package leetcode.PacificAtalantic;
 
 import org.junit.Test;
 

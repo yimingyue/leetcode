@@ -4,32 +4,46 @@ import java.util.*;
 
 /**
  * Created by ymyue on 1/23/16.
+ * Time complexity: O(e)
+ * Space complexity: O(e)
  */
 public class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-        if (n == 1) return Collections.singletonList(0);
+        Set<Integer>[] sets = new Set[n];
+        for (int i = 0; i < n; i++)
+            sets[i] = new HashSet<> ();
 
-        List<Set<Integer>> adj = new ArrayList<>(n);
-        for (int i = 0; i < n; ++i) adj.add(new HashSet<>());
         for (int[] edge : edges) {
-            adj.get(edge[0]).add(edge[1]);
-            adj.get(edge[1]).add(edge[0]);
+            sets[edge[0]].add(edge[1]);
+            sets[edge[1]].add(edge[0]);
         }
 
-        List<Integer> leaves = new ArrayList<>();
-        for (int i = 0; i < n; ++i)
-            if (adj.get(i).size() == 1) leaves.add(i);
+        List<Integer> result = new ArrayList<> ();
+        if (n == 1) {
+            result.add(0);
+            return result;
+        }
 
-        while (n > 2) {
-            n -= leaves.size();
-            List<Integer> newLeaves = new ArrayList<>();
-            for (int i : leaves) {
-                int j = adj.get(i).iterator().next();
-                adj.get(j).remove(i);
-                if (adj.get(j).size() == 1) newLeaves.add(j);
+        Queue<Integer> queue = new ArrayDeque<> ();
+        for (int i = 0; i < sets.length; i++) {
+            if (sets[i].size() == 1)
+                queue.offer(i);
+        }
+
+        int total = 0;
+        while (total < n-2) {
+            int count = queue.size();
+            total += count;
+            for (int i = 0; i < count; i++) {
+                int j = queue.poll();
+                for (int k : sets[j]) {
+                    sets[k].remove(j);
+                    if (sets[k].size() == 1)
+                        queue.offer(k);
+                }
             }
-            leaves = newLeaves;
         }
-        return leaves;
+        result.addAll(queue);
+        return result;
     }
 }

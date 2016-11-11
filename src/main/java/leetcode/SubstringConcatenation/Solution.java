@@ -1,4 +1,4 @@
-package SubstringConcatenation;
+package leetcode.SubstringConcatenation;
 
 import java.util.ArrayList;
 import java.util.HashSet;

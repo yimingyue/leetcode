@@ -1,4 +1,4 @@
-package RotateSort;
+package leetcode.RotateSort;
 
 /**
  * Created with IntelliJ IDEA.

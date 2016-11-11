@@ -1,4 +1,4 @@
-package Permutations;
+package leetcode.Permutations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
